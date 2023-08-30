@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 export const P1 = ()=>{
-const [Horas, setHoras]= useState("")
-const [seg, setSeg]= useState("")
+
+const [seg, setSeg]= useState("")   
 
 
 
@@ -14,10 +14,10 @@ const Conversor =()=>{
     const segundos = (Math.round(segundo % 0x3C))
     const horas = (Math.floor(segundo/ 0xE10))
     const minutos = (Math.floor(segundo / 0x3C ) % 0x3C)
-    setHoras(`${horas} horas, ${minutos} minutos y ${segundos} segundos`)
+    
   
     
-    console.log(Horas)
+    console.log(`${horas} horas, ${minutos} minutos y ${segundos} segundos`)
 }
 
 const ponerSeg =(e)=>{
@@ -36,6 +36,7 @@ return(
     onChange={(even)=> ponerSeg(even)}>
     </input>
     <button onClick={()=> Conversor()}> Convertir</button>
+    
     </>
 )
 }
